@@ -1,0 +1,57 @@
+#include <iostream>
+#include <conio.h>
+
+
+int factorial(int n) {
+    if (n <= 1) {
+        return 1; // Caso base
+    }
+    else {
+        return n * factorial(n - 1); // Llamada recursiva
+    }
+}
+
+int sumaDivisores(int n, int i) {
+    if (i == 1) {
+        return 1;
+    }
+    if (n % i == 0) {
+        return i + sumaDivisores(n, i - 1);
+    }
+    else {
+        return sumaDivisores(n, i - 1);
+    }
+}
+
+int Lasumadivisores(int n) {
+    if (n >= 1) {
+        return sumaDivisores(n, n - 1);
+    }
+    else {
+        return 0;
+    }
+}
+
+bool Esperfecto(int n) {
+    return Lasumadivisores(n) == n;
+}
+
+int main() {
+    int numero;
+
+    std::cout << "Ingrese un numero: ";
+    std::cin >> numero;
+    std::cout << "La suma de divisores de " << numero << " es " << Lasumadivisores(numero);
+    std::cout << " por lo tanto ";
+    if (Esperfecto(numero)) {
+        std::cout << "es perfecto";
+    }
+    else {
+        std::cout << "no es perfecto";
+    }
+  
+    
+
+    _getch();
+    return 0;
+}
