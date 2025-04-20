@@ -1,0 +1,35 @@
+#include <iostream>
+#include <conio.h>
+
+int es_Primo(int n, int i) {
+
+    if (n <= 1) return 0; //1 y 0 no son primos
+
+    if (i == 1) return 1; 
+
+    if (n % i == 0) {
+        return 0;
+    }
+    else {
+        return es_Primo(n, i - 1);
+    }
+}
+
+int main() {
+    int numero;
+    std::cout << "Ingrese un numero para comprobar si es primo o no: ";
+    std::cin >> numero;
+    std::cout << std::endl;
+
+    if (es_Primo(numero, numero-1)) {
+        std::cout << "Es primo";
+    }
+    else {
+        std::cout << "No es primo";
+    }
+  
+    
+
+    _getch();
+    return 0;
+}
