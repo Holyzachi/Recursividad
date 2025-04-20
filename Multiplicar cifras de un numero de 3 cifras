@@ -1,0 +1,22 @@
+#include <iostream>
+#include <conio.h>
+
+
+
+int multiplicacion1(int n) {
+    if (n < 10) {
+        return n; // Caso base: un solo dígito
+    }
+    else {
+        return (n % 10) * multiplicacion1(n / 10);
+    }
+}
+
+int main() {
+    std::cout << multiplicacion1(101);
+  
+    
+
+    _getch();
+    return 0;
+}
