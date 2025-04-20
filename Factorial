@@ -1,0 +1,31 @@
+#include <iostream>
+#include <conio.h>
+
+
+int factorial(int n) {
+    if (n <= 1) {
+        return 1; // Caso base
+    }
+    else {
+        return n * factorial(n - 1); // Llamada recursiva
+    }
+}
+
+
+int main() {
+
+    int numero;
+
+    do {
+        std::cout << "Ingrese un numero: ";
+        std::cin >> numero;
+
+    } while (numero < 0);
+    
+    std::cout << "El factorial de " << numero << " es " << factorial(numero);
+  
+    
+
+    _getch();
+    return 0;
+}
